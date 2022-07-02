@@ -35,6 +35,7 @@
                     @foreach ($new_products as $nproduct)
                         @php
                             $photo = explode(',', $nproduct->photo);
+                            $wishlist_array = [];
                             foreach (Cart::instance('wishlist')->content() as $item) {
                                 $wishlist_array[] = $item->id;
                             }
@@ -166,9 +167,6 @@
                     @foreach ($new_products as $nproduct)
                         @php
                             $photo = explode(',', $nproduct->photo);
-                            foreach (Cart::instance('wishlist')->content() as $item) {
-                                $wishlist_array[] = $item->id;
-                            }
                         @endphp
 
                         <div>
